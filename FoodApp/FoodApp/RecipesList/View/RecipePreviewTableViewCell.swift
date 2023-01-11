@@ -1,0 +1,66 @@
+//
+//  RecipePreviewTableViewCell.swift
+//  FoodApp
+//
+//  Created by Yuliya Lapenak on 1/11/23.
+//
+
+import UIKit
+import SnapKit
+import Kingfisher
+
+class RecipePreviewTableViewCell: UITableViewCell {
+    
+    static let identifier = "RecipePreviewTableViewCell"
+    
+    let stackView: UIStackView = {
+        let  view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fill
+        view.spacing = 16
+        return view
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let foodImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        return image
+        
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup() {
+        contentView.addSubview(stackView)
+        stackView.addArrangedSubview(foodImageView)
+        stackView.addArrangedSubview(titleLabel)
+        
+        stackView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    func set(model: RecipePreviewModel) {
+        foodImageView.kf.setImage(with: URL(string: model.image))
+        titleLabel.text = model.title
+    }
+}
