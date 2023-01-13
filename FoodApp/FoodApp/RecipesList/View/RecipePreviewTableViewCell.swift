@@ -41,6 +41,7 @@ class RecipePreviewTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+     setup()
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +49,7 @@ class RecipePreviewTableViewCell: UITableViewCell {
     }
     
     func setup() {
+       
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(foodImageView)
         stackView.addArrangedSubview(titleLabel)
@@ -56,6 +58,9 @@ class RecipePreviewTableViewCell: UITableViewCell {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        foodImageView.snp.makeConstraints {
+            $0.width.equalTo(150)
         }
     }
     

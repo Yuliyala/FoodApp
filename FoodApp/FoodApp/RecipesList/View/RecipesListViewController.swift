@@ -11,6 +11,7 @@ import Alamofire
 
 class RecipesListViewController: UIViewController {
 
+    let controller = RecipesListController()
     var dataSource: [RecipePreviewModel] = []
     
     let tableView: UITableView = {
@@ -34,6 +35,16 @@ class RecipesListViewController: UIViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         tableView.dataSource = self
+        tableView.delegate = self
+        fetchRecipes()
+    }
+    
+    func fetchRecipes() {
+        controller.fetchRecipes {  recipes in
+            print(recipes)
+            self.dataSource.append(contentsOf: recipes)
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -53,4 +64,10 @@ extension RecipesListViewController: UITableViewDataSource {
         return cell
     }
 
+}
+
+extension RecipesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        90
+    }
 }
