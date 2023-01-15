@@ -10,7 +10,7 @@ import SnapKit
 import Alamofire
 
 class RecipesListViewController: UIViewController {
-
+    
     let controller = RecipesListController()
     var dataSource: [RecipePreviewModel] = []
     
@@ -56,18 +56,24 @@ extension RecipesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecipePreviewTableViewCell.identifier) as? RecipePreviewTableViewCell else { return UITableViewCell() }
         
         cell.set(model: dataSource[indexPath.row])
         
         return cell
     }
-
+    
 }
 
 extension RecipesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         90
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedScreenViewController = SelectedScreenViewController()
+        navigationController?.pushViewController(selectedScreenViewController, animated: true)
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2AA604529747EB200FECF9F /* SelectedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA604429747EB200FECF9F /* SelectedScreenViewController.swift */; };
 		B2ABB8F5296F1D25005E513C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8F4296F1D25005E513C /* AppDelegate.swift */; };
 		B2ABB8F7296F1D25005E513C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8F6296F1D25005E513C /* SceneDelegate.swift */; };
 		B2ABB8F9296F1D25005E513C /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB8F8296F1D25005E513C /* RecipesListViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		4121EED92F21F9EC08DF20E3 /* Pods-FoodApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C8345094935D6FD250038F /* Pods_FoodApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2AA604429747EB200FECF9F /* SelectedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedScreenViewController.swift; sourceTree = "<group>"; };
 		B2ABB8F1296F1D25005E513C /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2ABB8F4296F1D25005E513C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2ABB8F6296F1D25005E513C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				B2ABB8F8296F1D25005E513C /* RecipesListViewController.swift */,
 				B2ABB910296F34A1005E513C /* RecipePreviewTableViewCell.swift */,
+				B2AA604429747EB200FECF9F /* SelectedScreenViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2ABB90B296F23C5005E513C /* RecipePreviewModel.swift in Sources */,
+				B2AA604529747EB200FECF9F /* SelectedScreenViewController.swift in Sources */,
 				B2ABB90E296F27E1005E513C /* ApiService.swift in Sources */,
 				B2ABB8F9296F1D25005E513C /* RecipesListViewController.swift in Sources */,
 				B2ABB913296F3AD3005E513C /* RecipesListController.swift in Sources */,
