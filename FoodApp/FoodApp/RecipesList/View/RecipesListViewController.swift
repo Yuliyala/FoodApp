@@ -46,6 +46,12 @@ class RecipesListViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func openDetails(for index: Int) {
+        let id = dataSource[index].id
+        let destination = RecipeDetailsBuilder().build(id: id)
+        navigationController?.pushViewController(destination, animated: true)
+    }
 }
 
 
@@ -72,8 +78,7 @@ extension RecipesListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedScreenViewController = SelectedScreenViewController()
-        navigationController?.pushViewController(selectedScreenViewController, animated: true)
+        openDetails(for: indexPath.row)
     }
     
 }
