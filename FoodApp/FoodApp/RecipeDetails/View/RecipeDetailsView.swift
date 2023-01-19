@@ -39,6 +39,12 @@ class RecipeDetailsView: UIView {
         return view
     }()
     
+    let iconView: IconsView = {
+        let view = IconsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -54,12 +60,24 @@ class RecipeDetailsView: UIView {
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(headerView)
+        stackView.addArrangedSubview(iconView)
 
         setConstraints()
     }
     
     func set(model: RecipeDetail) {
         headerView.set(title: model.title, image: model.image)
+        if model.vegetarian == true  {
+            iconView.vegetarianImageView.image = UIImage(named: "vegan")
+        } else {
+            iconView.vegetarianImageView.image = UIImage(named: "meat")
+        }
+        
+        if model.glutenFree == true  {
+            iconView.glutenFreeImageView.image = UIImage(named: "notgluten")
+        } else {
+            iconView.glutenFreeImageView.image = UIImage(named: "gluten")
+        }
     }
     
     func setConstraints(){

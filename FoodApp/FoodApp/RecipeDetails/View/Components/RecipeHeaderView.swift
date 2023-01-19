@@ -23,7 +23,6 @@ class RecipeHeaderView: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
         return image
         
     }()
