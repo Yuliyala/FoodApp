@@ -78,6 +78,30 @@ class RecipeDetailsView: UIView {
         } else {
             iconView.glutenFreeImageView.image = UIImage(named: "gluten")
         }
+        
+        if model.dairyFree == true  {
+            iconView.dairyFreeImageView.image = UIImage(named: "dairyfree")
+        } else {
+            iconView.dairyFreeImageView.image = UIImage(named: "dairy")
+        }
+        
+        if model.veryHealthy == true  {
+            iconView.veryHealthyImageView.image = UIImage(named: "no-fast-food")
+        } else {
+            iconView.veryHealthyImageView.image = UIImage(named: "fast-food")
+        }
+        
+        if model.veryPopular == true  {
+            iconView.veryPopularFreeImageView.image = UIImage(named: "fire")
+        } else {
+            iconView.veryPopularFreeImageView.image = UIImage(named: "no-fire")
+        }
+        
+        if model.cheap == true  {
+            iconView.cheapImageView.image = UIImage(named: "loss")
+        } else {
+            iconView.cheapImageView.image = UIImage(named: "arrow")
+        }
     }
     
     func setConstraints(){

@@ -19,51 +19,12 @@ class IconsView: UIView {
         return view
     }()
     
-    let vegetarianImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        return image
-    }()
-    
-    let glutenFreeImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        return image
-    }()
-    
-    let dairyFreeImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
-        return image
-    }()
-    
-    let veryHealthyImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
-        return image
-    }()
-    
-    let cheapFreeImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
-        return image
-    }()
-    
-    let veryPopularFreeImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
-        return image
-    }()
+    let vegetarianImageView = IconImage()
+    let glutenFreeImageView = IconImage()
+    let dairyFreeImageView = IconImage()
+    let veryHealthyImageView = IconImage()
+    let cheapImageView = IconImage()
+    let veryPopularFreeImageView = IconImage()
     
     init(){
         super.init(frame: .zero)
@@ -80,14 +41,14 @@ class IconsView: UIView {
         stackView.addArrangedSubview(glutenFreeImageView)
         stackView.addArrangedSubview(dairyFreeImageView)
         stackView.addArrangedSubview(veryHealthyImageView)
-        stackView.addArrangedSubview(cheapFreeImageView)
+        stackView.addArrangedSubview(cheapImageView)
         stackView.addArrangedSubview(veryPopularFreeImageView)
         
         stackView.setCustomSpacing(16, after: vegetarianImageView)
         stackView.setCustomSpacing(16, after: glutenFreeImageView)
         stackView.setCustomSpacing(16, after: dairyFreeImageView)
         stackView.setCustomSpacing(16, after: veryHealthyImageView)
-        stackView.setCustomSpacing(16, after: cheapFreeImageView)
+        stackView.setCustomSpacing(16, after: cheapImageView)
         
         vegetarianImageView.snp.makeConstraints {
             $0.leading.equalTo(40)
@@ -96,7 +57,7 @@ class IconsView: UIView {
         makeConstraints(imageView: glutenFreeImageView)
         makeConstraints(imageView: dairyFreeImageView)
         makeConstraints(imageView: veryHealthyImageView)
-        makeConstraints(imageView: cheapFreeImageView)
+        makeConstraints(imageView: cheapImageView)
         makeConstraints(imageView: veryPopularFreeImageView)
     }
     
