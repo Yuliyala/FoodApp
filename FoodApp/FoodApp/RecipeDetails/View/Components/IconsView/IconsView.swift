@@ -68,9 +68,16 @@ class IconsView: UIView {
         }
     }
     
-//    func setImages(imageView: UIImageView,image: String) {
-//        imageView.image = UIImage(named: image)
-//    }
+    func setImage(model: RecipeDetail) {
+        
+        vegetarianImageView.image = UIImage(named: model.vegetarian ? "vegan" : "meat")
+        glutenFreeImageView.image = UIImage(named: model.vegetarian ? "notgluten" : "gluten")
+        dairyFreeImageView.image = UIImage(named: model.vegetarian ? "dairyfree" : "dairy")
+        veryHealthyImageView.image = UIImage(named: model.vegetarian ? "no-fast-food" : "dairy")
+        veryPopularFreeImageView.image = UIImage(named: model.vegetarian ? "fire" : "no-fire")
+        cheapImageView.image = UIImage(named: model.vegetarian ? "loss" : "arrow")
+     
+    }
     
 }
 
