@@ -45,6 +45,12 @@ class RecipeDetailsView: UIView {
         return view
     }()
     
+    let additionView : RecipeAdditionalInfoView = {
+        let view = RecipeAdditionalInfoView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -61,6 +67,7 @@ class RecipeDetailsView: UIView {
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(headerView)
         stackView.addArrangedSubview(iconView)
+        stackView.addArrangedSubview(additionView)
 
         setConstraints()
     }
@@ -68,7 +75,7 @@ class RecipeDetailsView: UIView {
     func set(model: RecipeDetail) {
         headerView.set(title: model.title, image: model.image)
         iconView.setImage(model: model)
-
+        additionView.set(model: model)
     }
     
     func setConstraints(){
