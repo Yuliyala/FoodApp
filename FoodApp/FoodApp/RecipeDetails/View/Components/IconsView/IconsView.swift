@@ -63,6 +63,12 @@ class IconsView: UIView {
     
     
     func makeConstraints(imageView: UIImageView) {
+       
+        stackView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(30)
+            
+        }
         imageView.snp.makeConstraints {
             $0.size.equalTo(40)
         }

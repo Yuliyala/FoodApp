@@ -29,7 +29,7 @@ class RecipeDetailsView: UIView {
         view.axis = .vertical
         view.alignment = .fill
         view.distribution = .fill
-        view.spacing = 16
+//        view.spacing = 16
         return view
     }()
     
@@ -45,12 +45,12 @@ class RecipeDetailsView: UIView {
         return view
     }()
     
-    let additionView : RecipeAdditionalInfoView = {
-        let view = RecipeAdditionalInfoView()
+    let mainInfoView: RecipeInfoView = {
+        let view = RecipeInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     init(){
         super.init(frame: .zero)
         setupView()
@@ -67,15 +67,24 @@ class RecipeDetailsView: UIView {
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(headerView)
         stackView.addArrangedSubview(iconView)
-        stackView.addArrangedSubview(additionView)
+        stackView.addArrangedSubview(mainInfoView)
 
+        stackView.setCustomSpacing(10, after: headerView)
+        stackView.setCustomSpacing(10, after: iconView)
+        stackView.setCustomSpacing(10, after: mainInfoView)
+      
         setConstraints()
     }
     
     func set(model: RecipeDetail) {
         headerView.set(title: model.title, image: model.image)
         iconView.setImage(model: model)
-        additionView.set(model: model)
+        mainInfoView.set(model: model)
+       
+    }
+    
+    func set(model: InstructionStep) {
+        mainInfoView.setInstruction(model: model)
     }
     
     func setConstraints(){
@@ -92,5 +101,6 @@ class RecipeDetailsView: UIView {
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
     }
 }
