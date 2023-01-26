@@ -27,7 +27,7 @@ class  RecipeInfoView: UIView {
     var cuisinesLabel = RecipeLabel()
     var dishTypesLabel = RecipeLabel()
     var dietsLabel = RecipeLabel()
-    var stepLabel = RecipeLabel()
+
 
     init(){
         super.init(frame: .zero)
@@ -50,10 +50,11 @@ class  RecipeInfoView: UIView {
         stackView.addArrangedSubview(cuisinesLabel)
         stackView.addArrangedSubview(dishTypesLabel)
         stackView.addArrangedSubview(dietsLabel)
-        stackView.addArrangedSubview(stepLabel)
+  
 
         stackView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(30)
+            $0.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview().offset(30)
         }
     }
@@ -69,21 +70,18 @@ class  RecipeInfoView: UIView {
             model.cuisines.forEach { cuisinesLabel.text = "Cuisine:  \($0)"
             }
         }
-        
+        cuisinesLabel.isHidden = model.cuisines.isEmpty
         if !model.dishTypes.isEmpty {
             model.dishTypes.forEach { dishTypesLabel.text = "Dish type:  \($0)"
             }
         }
         
-        if model.diets.isEmpty {
+        if !model.diets.isEmpty {
             model.diets.forEach { dietsLabel.text = "Diet:  \($0)"
             }
         }
     }
 
-    func setInstruction(model: InstructionStep) {
-        stepLabel.text = "Steps: \(model.step)"
-    }
 }
 
 

@@ -23,6 +23,7 @@ class RecipeDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rootView.setLoading(isLoading: true)
         controller.fetchRecipeInfo { response in
             switch response {
             case .success(let recipe):
@@ -32,6 +33,15 @@ class RecipeDetailsViewController: UIViewController {
                 print(failure)
             }
         }
+        setupLinkView()
+    }
+    
+    func setupLinkView() {
+        rootView.linkView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkViewPressed)))
+    }
+    
+    @objc func linkViewPressed() {
+        controller.openLink()
     }
     
 }
