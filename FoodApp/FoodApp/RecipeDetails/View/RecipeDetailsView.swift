@@ -45,8 +45,8 @@ class RecipeDetailsView: UIView {
         return view
     }()
     
-    let mainInfoView: RecipeInfoView = {
-        let view = RecipeInfoView()
+    let infoView: InfoView = {
+        let view = InfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -92,13 +92,13 @@ class RecipeDetailsView: UIView {
         stackView.addArrangedSubview(headerView)
         stackView.addArrangedSubview(linkView)
         stackView.addArrangedSubview(iconView)
-        stackView.addArrangedSubview(mainInfoView)
+        stackView.addArrangedSubview(infoView)
         stackView.addArrangedSubview(stepContainer)
         
         stackView.setCustomSpacing(10, after: headerView)
         stackView.setCustomSpacing(10, after: linkView)
         stackView.setCustomSpacing(10, after: iconView)
-        stackView.setCustomSpacing(10, after: mainInfoView)
+        stackView.setCustomSpacing(10, after: infoView)
         
         setConstraints()
     }
@@ -107,7 +107,7 @@ class RecipeDetailsView: UIView {
         setLoading(isLoading: false)
         headerView.set(title: model.title, image: model.image)
         iconView.setImage(model: model)
-        mainInfoView.set(model: model)
+        infoView.set(model: model)
         if !model.analyzedInstructions.isEmpty {
             stepContainer.set(steps: model.analyzedInstructions[0].steps)
         }
