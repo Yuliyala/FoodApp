@@ -19,6 +19,7 @@ class IngredientView: UIView {
 
     init() {
         super.init(frame: .zero)
+        set()
     }
     
     required init?(coder: NSCoder) {
@@ -38,10 +39,16 @@ class IngredientView: UIView {
     func set(ingredient: Ingredient) {
         var text = NSMutableAttributedString()
         text.append(NSMutableAttributedString(
-            string: " Name \(ingredient.name) \n\n" ,
-            attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .semibold)]))
+            string: "Ingredient: \(ingredient.name) \n" ,
+            attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]))
         text.append(NSMutableAttributedString(
-            string: ingredient.original ,
+            string: "Amount: \(ingredient.amount) \n" ,
+            attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .regular)]))
+        text.append(NSMutableAttributedString(
+            string: "\(ingredient.original) \n" ,
+            attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .regular)]))
+        text.append(NSMutableAttributedString(
+            string: "\(ingredient.image) \n" ,
             attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .regular)]))
         label.attributedText = text
     }
