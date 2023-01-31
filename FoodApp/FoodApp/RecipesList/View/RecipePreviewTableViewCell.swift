@@ -20,6 +20,7 @@ class RecipePreviewTableViewCell: UITableViewCell {
         view.alignment = .fill
         view.distribution = .fill
         view.spacing = 16
+        view.backgroundColor = .red
         return view
     }()
     
@@ -34,7 +35,7 @@ class RecipePreviewTableViewCell: UITableViewCell {
     let foodImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         return image
         
     }()
@@ -49,7 +50,8 @@ class RecipePreviewTableViewCell: UITableViewCell {
     }
     
     func setup() {
-       
+        stackView.layer.cornerRadius = 12
+        stackView.layer.masksToBounds = true
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(foodImageView)
         stackView.addArrangedSubview(titleLabel)

@@ -16,6 +16,13 @@ class IngredientView: UIView {
         label.textAlignment = .left
         return label
     }()
+    
+    let imageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -29,15 +36,23 @@ class IngredientView: UIView {
     func set(){
         backgroundColor = #colorLiteral(red: 0.8651953936, green: 0.9585103393, blue: 0.6119126678, alpha: 0.5019501945)
         addSubview(label)
+        addSubview(imageView)
         
         label.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().offset(16)
+        }
+        
+        imageView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.leading.equalTo(label.snp.trailing).offset(20)
+            $0.size.equalTo(70)
+            $0.centerY.equalToSuperview()
         }
     }
     
     func set(ingredient: Ingredient) {
-        var text = NSMutableAttributedString()
+        let text = NSMutableAttributedString()
         text.append(NSMutableAttributedString(
             string: "Ingredient: \(ingredient.name) \n" ,
             attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .semibold)]))
@@ -47,10 +62,13 @@ class IngredientView: UIView {
         text.append(NSMutableAttributedString(
             string: "\(ingredient.original) \n" ,
             attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .regular)]))
-        text.append(NSMutableAttributedString(
-            string: "\(ingredient.image) \n" ,
-            attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .regular)]))
+    
         label.attributedText = text
+        
+        
+        imageView.kf.setImage(with: URL(string: ingredient.imageLink ?? ""))
     }
+    
+    
     
 }

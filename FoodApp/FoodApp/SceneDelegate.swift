@@ -18,9 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
 
-        let viewController = RecipesListViewController()
-        let navigation = UINavigationController(rootViewController: viewController)
-        window.rootViewController = navigation
+        let recipesController = UINavigationController(rootViewController: RecipesListViewController())
+        let winesController = UINavigationController(rootViewController: VinesViewController())
+        let tabBar = UITabBarController()
+        tabBar.viewControllers = [recipesController, winesController]
+        window.rootViewController = tabBar
+        
+        tabBar.tabBar.items?[0].title = "Recipes"
+        tabBar.tabBar.items?[0].image = UIImage(systemName: "newspaper")
+        tabBar.tabBar.items?[1].title = "Wines"
+        tabBar.tabBar.items?[1].image = UIImage(systemName: "wineglass")
+        
+        
         self.window = window
         window.makeKeyAndVisible()
     }
