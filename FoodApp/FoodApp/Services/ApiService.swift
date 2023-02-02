@@ -25,7 +25,7 @@ class APIService {
         fetchData(from: url, completion: completion)
     }
     
-    func fetchWines(completion: @escaping (Result<VineRecommendation, Error>) -> Void) {
+    func fetchWines(completion: @escaping (Result<WineRecommendation, Error>) -> Void) {
         let url = host + String(format: URLPathes.getWines, apiKey)
         fetchData(from: url, completion: completion)
     }

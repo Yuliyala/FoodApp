@@ -1,58 +1,48 @@
 //
-//  RecipePreviewTableViewCell.swift
+//  WineTableViewCell.swift
 //  FoodApp
 //
-//  Created by Yuliya Lapenak on 1/11/23.
+//  Created by Yuliya Lapenak on 2/1/23.
 //
 
 import UIKit
-import SnapKit
-import Kingfisher
 
-class RecipePreviewTableViewCell: UITableViewCell {
+class WineTableViewCell: UITableViewCell {
     
-    static let identifier = "RecipePreviewTableViewCell"
+    static let identifier = "WineTableViewCell"
     
     let stackView: UIStackView = {
-        let  view = UIStackView()
+        let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .horizontal
-        view.alignment = .fill
-        view.distribution = .fill
-        view.spacing = 16
         return view
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.numberOfLines = 0
         return label
     }()
     
-    let foodImageView: UIImageView = {
+    let wineImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
-        
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-     setup()
+        setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-        stackView.layer.cornerRadius = 12
-        stackView.layer.masksToBounds = true
+    func setup(){
         contentView.addSubview(stackView)
-        stackView.addArrangedSubview(foodImageView)
+        stackView.addArrangedSubview(wineImageView)
         stackView.addArrangedSubview(titleLabel)
         
         stackView.snp.makeConstraints {
@@ -60,13 +50,21 @@ class RecipePreviewTableViewCell: UITableViewCell {
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
-        foodImageView.snp.makeConstraints {
-            $0.width.equalTo(150)
+        
+        wineImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(16)
+            $0.size.equalTo(40)
         }
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(wineImageView.snp.trailing).offset(30)
+            $0.top.equalToSuperview().offset(16)
+        }
+        
     }
     
-    func set(model: RecipePreviewModel) {
-        foodImageView.kf.setImage(with: URL(string: model.image))
+    func set(model: WineModel) {
+        wineImageView.kf.setImage(with: URL(string: model.imageUrl))
         titleLabel.text = model.title
     }
 }

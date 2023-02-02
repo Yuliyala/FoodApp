@@ -1,5 +1,5 @@
 //
-//  VineModel.swift
+//  WineModel.swift
 //  FoodApp
 //
 //  Created by Yuliya Lapenak on 1/31/23.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct VineRecommendation: Decodable {
+struct WineRecommendation: Decodable {
     let recommendedWines: [WineModel]
     let totalFound: Int
 }

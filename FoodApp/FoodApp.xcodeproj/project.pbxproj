@@ -13,9 +13,10 @@
 		B295278D29841F72007BF51B /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295278C29841F72007BF51B /* IngredientView.swift */; };
 		B295279129844944007BF51B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279029844944007BF51B /* InfoView.swift */; };
 		B295279329845BBB007BF51B /* IngredientsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279229845BBB007BF51B /* IngredientsContainerView.swift */; };
-		B2952797298984A9007BF51B /* VineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2952796298984A9007BF51B /* VineModel.swift */; };
-		B295279A29898626007BF51B /* VinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279929898626007BF51B /* VinesViewController.swift */; };
+		B2952797298984A9007BF51B /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2952796298984A9007BF51B /* WineModel.swift */; };
+		B295279A29898626007BF51B /* WinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279929898626007BF51B /* WinesViewController.swift */; };
 		B295279D29898C5B007BF51B /* WinesRecommendationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279C29898C5B007BF51B /* WinesRecommendationController.swift */; };
+		B295279F298AA834007BF51B /* WineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295279E298AA834007BF51B /* WineTableViewCell.swift */; };
 		B2AA606F2976FDE000FECF9F /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA606E2976FDE000FECF9F /* RecipeDetailsViewController.swift */; };
 		B2AA60712976FDF800FECF9F /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA60702976FDF800FECF9F /* RecipeDetailsView.swift */; };
 		B2AA60752976FE5800FECF9F /* RecipeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA60742976FE5800FECF9F /* RecipeDetailsController.swift */; };
@@ -45,9 +46,10 @@
 		B295278C29841F72007BF51B /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
 		B295279029844944007BF51B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		B295279229845BBB007BF51B /* IngredientsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsContainerView.swift; sourceTree = "<group>"; };
-		B2952796298984A9007BF51B /* VineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineModel.swift; sourceTree = "<group>"; };
-		B295279929898626007BF51B /* VinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinesViewController.swift; sourceTree = "<group>"; };
+		B2952796298984A9007BF51B /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
+		B295279929898626007BF51B /* WinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinesViewController.swift; sourceTree = "<group>"; };
 		B295279C29898C5B007BF51B /* WinesRecommendationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinesRecommendationController.swift; sourceTree = "<group>"; };
+		B295279E298AA834007BF51B /* WineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineTableViewCell.swift; sourceTree = "<group>"; };
 		B2AA606E2976FDE000FECF9F /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		B2AA60702976FDF800FECF9F /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		B2AA60742976FE5800FECF9F /* RecipeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsController.swift; sourceTree = "<group>"; };
@@ -93,9 +95,9 @@
 		B295279429898459007BF51B /* VinesRecommendation */ = {
 			isa = PBXGroup;
 			children = (
+				B295279529898493007BF51B /* Model */,
 				B295279B29898C3A007BF51B /* Controller */,
 				B29527982989860E007BF51B /* View */,
-				B295279529898493007BF51B /* Model */,
 			);
 			path = VinesRecommendation;
 			sourceTree = "<group>";
@@ -103,7 +105,7 @@
 		B295279529898493007BF51B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B2952796298984A9007BF51B /* VineModel.swift */,
+				B2952796298984A9007BF51B /* WineModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,7 +113,8 @@
 		B29527982989860E007BF51B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B295279929898626007BF51B /* VinesViewController.swift */,
+				B295279929898626007BF51B /* WinesViewController.swift */,
+				B295279E298AA834007BF51B /* WineTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,7 +390,7 @@
 			files = (
 				B2ABB90B296F23C5005E513C /* RecipePreviewModel.swift in Sources */,
 				B295276329819363007BF51B /* StepsContainerView.swift in Sources */,
-				B295279A29898626007BF51B /* VinesViewController.swift in Sources */,
+				B295279A29898626007BF51B /* WinesViewController.swift in Sources */,
 				B2ABB90E296F27E1005E513C /* ApiService.swift in Sources */,
 				B2E17EFA2979EE530088C10A /* IconImage.swift in Sources */,
 				B2AA606F2976FDE000FECF9F /* RecipeDetailsViewController.swift in Sources */,
@@ -395,13 +398,14 @@
 				B2ABB913296F3AD3005E513C /* RecipesListController.swift in Sources */,
 				B2E17EF72979CD910088C10A /* IconsView.swift in Sources */,
 				B2AA60752976FE5800FECF9F /* RecipeDetailsController.swift in Sources */,
+				B295279F298AA834007BF51B /* WineTableViewCell.swift in Sources */,
 				B2AA607A2977116B00FECF9F /* RecipeDetailsBuilder.swift in Sources */,
 				B2ABB8F5296F1D25005E513C /* AppDelegate.swift in Sources */,
 				B295279129844944007BF51B /* InfoView.swift in Sources */,
 				B2ABB911296F34A1005E513C /* RecipePreviewTableViewCell.swift in Sources */,
 				B29527672981A3B7007BF51B /* LinkView.swift in Sources */,
 				B2AA60782976FE9900FECF9F /* RecipeDetailModel.swift in Sources */,
-				B2952797298984A9007BF51B /* VineModel.swift in Sources */,
+				B2952797298984A9007BF51B /* WineModel.swift in Sources */,
 				B2ABB8F7296F1D25005E513C /* SceneDelegate.swift in Sources */,
 				B2AA60712976FDF800FECF9F /* RecipeDetailsView.swift in Sources */,
 				B295278D29841F72007BF51B /* IngredientView.swift in Sources */,
