@@ -14,8 +14,8 @@ class  WinesRecommendationController {
     private var wines: [WineModel] = []
     private var total: Int?
     
-     func fetchWines(completion: @escaping (Result<[WineModel], Error>) -> Void) {
-        apiService.fetchWines { result in
+    func fetchWines(wineType: WineType = .redWine, completion: @escaping (Result<[WineModel], Error>) -> Void) {
+        apiService.fetchWines(wineType: wineType) { result in
             switch result {
             case.success(let data):
                 completion(.success(data.recommendedWines))

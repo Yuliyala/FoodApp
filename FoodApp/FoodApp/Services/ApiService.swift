@@ -11,7 +11,8 @@ import Alamofire
 class APIService {
     
     let host = "https://api.spoonacular.com/"
-    let apiKey = "30ff578cb7d54bd8935d52b9d0e7dd15"
+//    let apiKey = "30ff578cb7d54bd8935d52b9d0e7dd15"
+    let apiKey = "e727ee78923b41f3a1918987f27911ab"
     
     func fetchRecipes(offset: Int = 0, completion: @escaping (Result<RecipesSearchResult, Error>) -> Void) {
         let url = host + String(format: URLPathes.getRecipes, apiKey, offset, 30)
@@ -25,8 +26,8 @@ class APIService {
         fetchData(from: url, completion: completion)
     }
     
-    func fetchWines(completion: @escaping (Result<WineRecommendation, Error>) -> Void) {
-        let url = host + String(format: URLPathes.getWines, apiKey)
+    func fetchWines(wineType: WineType = .redWine, completion: @escaping (Result<WineRecommendation, Error>) -> Void) {
+        let url = host + String(format: URLPathes.getWines,wineType.rawValue, apiKey)
         fetchData(from: url, completion: completion)
     }
     
@@ -61,7 +62,7 @@ struct URLPathes {
     
     static let getRecipes = "recipes/complexSearch?apiKey=%@&offset=%d&number=%d"
     static let getRecipe = "recipes/%d/information?apiKey=%@"
-    static let getWines = "food/wine/recommendation?wine=red_wine&number=100&apiKey=%@"
+    static let getWines = "food/wine/recommendation?wine=%@&number=100&apiKey=%@"
 }
 
 //%@ - для String , %d для Int

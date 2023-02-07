@@ -34,7 +34,7 @@ class IngredientView: UIView {
     }
     
     func set(){
-        backgroundColor = #colorLiteral(red: 0.8651953936, green: 0.9585103393, blue: 0.6119126678, alpha: 0.5019501945)
+        backgroundColor = .white
         addSubview(label)
         addSubview(imageView)
         

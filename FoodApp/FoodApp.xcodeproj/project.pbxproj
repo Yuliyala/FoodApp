@@ -32,6 +32,9 @@
 		B2ABB90E296F27E1005E513C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB90D296F27E1005E513C /* ApiService.swift */; };
 		B2ABB911296F34A1005E513C /* RecipePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB910296F34A1005E513C /* RecipePreviewTableViewCell.swift */; };
 		B2ABB913296F3AD3005E513C /* RecipesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB912296F3AD3005E513C /* RecipesListController.swift */; };
+		B2D2A5C92992B13500C84C78 /* WineTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */; };
+		B2D2A5CB2992CC4000C84C78 /* WinesViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */; };
+		B2D2A5CD2992CC5D00C84C78 /* WinesViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */; };
 		B2E17EF72979CD910088C10A /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E17EF62979CD910088C10A /* IconsView.swift */; };
 		B2E17EFA2979EE530088C10A /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E17EF92979EE530088C10A /* IconImage.swift */; };
 		BFE71EF8894692BA081DBF32 /* Pods_FoodApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8345094935D6FD250038F /* Pods_FoodApp.framework */; };
@@ -67,6 +70,9 @@
 		B2ABB90D296F27E1005E513C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		B2ABB910296F34A1005E513C /* RecipePreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewTableViewCell.swift; sourceTree = "<group>"; };
 		B2ABB912296F3AD3005E513C /* RecipesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListController.swift; sourceTree = "<group>"; };
+		B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WinesViewController+Table.swift"; sourceTree = "<group>"; };
+		B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WinesViewController+Collection.swift"; sourceTree = "<group>"; };
 		B2E17EF62979CD910088C10A /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
 		B2E17EF92979EE530088C10A /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		BA69C44D8CA5DD4C09B32228 /* Pods-FoodApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.release.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 			children = (
 				B295279929898626007BF51B /* WinesViewController.swift */,
 				B295279E298AA834007BF51B /* WineTableViewCell.swift */,
+				B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */,
+				B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */,
+				B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,12 +401,14 @@
 				B295276329819363007BF51B /* StepsContainerView.swift in Sources */,
 				B295279A29898626007BF51B /* WinesViewController.swift in Sources */,
 				B2ABB90E296F27E1005E513C /* ApiService.swift in Sources */,
+				B2D2A5CB2992CC4000C84C78 /* WinesViewController+Table.swift in Sources */,
 				B2E17EFA2979EE530088C10A /* IconImage.swift in Sources */,
 				B2AA606F2976FDE000FECF9F /* RecipeDetailsViewController.swift in Sources */,
 				B2ABB8F9296F1D25005E513C /* RecipesListViewController.swift in Sources */,
 				B2ABB913296F3AD3005E513C /* RecipesListController.swift in Sources */,
 				B2E17EF72979CD910088C10A /* IconsView.swift in Sources */,
 				B2AA60752976FE5800FECF9F /* RecipeDetailsController.swift in Sources */,
+				B2D2A5C92992B13500C84C78 /* WineTypeCollectionViewCell.swift in Sources */,
 				B295279F298AA834007BF51B /* WineTableViewCell.swift in Sources */,
 				B2AA607A2977116B00FECF9F /* RecipeDetailsBuilder.swift in Sources */,
 				B2ABB8F5296F1D25005E513C /* AppDelegate.swift in Sources */,
@@ -405,6 +416,7 @@
 				B2ABB911296F34A1005E513C /* RecipePreviewTableViewCell.swift in Sources */,
 				B29527672981A3B7007BF51B /* LinkView.swift in Sources */,
 				B2AA60782976FE9900FECF9F /* RecipeDetailModel.swift in Sources */,
+				B2D2A5CD2992CC5D00C84C78 /* WinesViewController+Collection.swift in Sources */,
 				B2952797298984A9007BF51B /* WineModel.swift in Sources */,
 				B2ABB8F7296F1D25005E513C /* SceneDelegate.swift in Sources */,
 				B2AA60712976FDF800FECF9F /* RecipeDetailsView.swift in Sources */,
