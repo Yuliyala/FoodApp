@@ -41,7 +41,7 @@ class RecipesListViewController: UIViewController {
     }
     
     func fetchRecipes() {
-        controller.fetchRecipes {  recipes in
+        controller.fetchRecipes { recipes in
             print(recipes)
             self.dataSource.append(contentsOf: recipes)
             self.tableView.reloadData()
