@@ -29,7 +29,7 @@ class RecipeDetailsView: UIView {
         view.axis = .vertical
         view.alignment = .fill
         view.distribution = .fill
-        //        view.spacing = 16
+        view.spacing = 16
         return view
     }()
     
@@ -45,35 +45,6 @@ class RecipeDetailsView: UIView {
         return view
     }()
     
-    let mainInfoView: RecipeInfoView = {
-        let view = RecipeInfoView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let stepContainer: StepsContainerView = {
-        let view = StepsContainerView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let linkView: LinkView = {
-        let view = LinkView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    //индикатор загрузки
-    
-    let loader: UIActivityIndicatorView = {
-       let loader = UIActivityIndicatorView()
-        loader.translatesAutoresizingMaskIntoConstraints = false
-        loader.style = .large
-        loader.hidesWhenStopped = true
-        return loader
-    }()
-    
-    
     init(){
         super.init(frame: .zero)
         setupView()
@@ -88,35 +59,25 @@ class RecipeDetailsView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
-        contentView.addSubview(loader)
         stackView.addArrangedSubview(headerView)
-        stackView.addArrangedSubview(linkView)
         stackView.addArrangedSubview(iconView)
-        stackView.addArrangedSubview(mainInfoView)
-        stackView.addArrangedSubview(stepContainer)
-        
-        stackView.setCustomSpacing(10, after: headerView)
-        stackView.setCustomSpacing(10, after: linkView)
-        stackView.setCustomSpacing(10, after: iconView)
-        stackView.setCustomSpacing(10, after: mainInfoView)
-        
+
         setConstraints()
     }
     
     func set(model: RecipeDetail) {
-        setLoading(isLoading: false)
         headerView.set(title: model.title, image: model.image)
-        iconView.setImage(model: model)
-        mainInfoView.set(model: model)
-        if !model.analyzedInstructions.isEmpty {
-            stepContainer.set(steps: model.analyzedInstructions[0].steps)
+        if model.vegetarian == true  {
+            iconView.vegetarianImageView.image = UIImage(named: "vegan")
+        } else {
+            iconView.vegetarianImageView.image = UIImage(named: "meat")
         }
-    }
-    
-    func setLoading(isLoading: Bool){
-        stackView.isHidden = isLoading
         
-        isLoading ? loader.startAnimating() : loader.stopAnimating()
+        if model.glutenFree == true  {
+            iconView.glutenFreeImageView.image = UIImage(named: "notgluten")
+        } else {
+            iconView.glutenFreeImageView.image = UIImage(named: "gluten")
+        }
     }
     
     func setConstraints(){
@@ -132,10 +93,6 @@ class RecipeDetailsView: UIView {
         
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-        }
-        
-        loader.snp.makeConstraints {
-            $0.center.equalToSuperview()
         }
     }
 }
