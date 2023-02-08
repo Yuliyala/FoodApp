@@ -24,6 +24,7 @@ class RecipesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.hidesBottomBarWhenPushed = true
         setupTable()
     }
     
@@ -40,7 +41,7 @@ class RecipesListViewController: UIViewController {
     }
     
     func fetchRecipes() {
-        controller.fetchRecipes {  recipes in
+        controller.fetchRecipes { recipes in
             print(recipes)
             self.dataSource.append(contentsOf: recipes)
             self.tableView.reloadData()
@@ -50,6 +51,7 @@ class RecipesListViewController: UIViewController {
     func openDetails(for index: Int) {
         let id = dataSource[index].id
         let destination = RecipeDetailsBuilder().build(id: id)
+        destination.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(destination, animated: true)
     }
 }

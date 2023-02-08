@@ -45,6 +45,12 @@ struct Ingredient: Codable {
     let original: String
     let amount: Double
     let unit: String
+    
+    var imageLink: String? {
+    
+        guard let image = image else {return nil}
+        return "https://spoonacular.com/cdn/ingredients_250x250/" + image
+    }
 }
 
 struct Instruction: Codable {

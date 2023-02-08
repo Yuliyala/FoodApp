@@ -43,7 +43,7 @@ class RecipeHeaderView: UIView {
         
         imageView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(48)
-            $0.top.equalToSuperview().offset(32)
+            $0.top.equalToSuperview().offset(10)
             $0.height.equalTo(216)
         }
         
