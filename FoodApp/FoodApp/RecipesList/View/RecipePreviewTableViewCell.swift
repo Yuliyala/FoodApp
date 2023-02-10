@@ -49,7 +49,8 @@ class RecipePreviewTableViewCell: UITableViewCell {
     }
     
     func setup() {
-        stackView.layer.cornerRadius = 12
+        contentView.backgroundColor = #colorLiteral(red: 0.920078814, green: 0.914947927, blue: 0.9263009429, alpha: 1)
+        stackView.layer.cornerRadius = 8
         stackView.layer.masksToBounds = true
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(foodImageView)
@@ -57,11 +58,10 @@ class RecipePreviewTableViewCell: UITableViewCell {
         
         stackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(10)
         }
         foodImageView.snp.makeConstraints {
-            $0.width.equalTo(150)
+            $0.width.equalTo(120)
         }
     }
     

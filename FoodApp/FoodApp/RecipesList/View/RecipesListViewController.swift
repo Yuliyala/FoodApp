@@ -76,11 +76,10 @@ extension RecipesListViewController: UITableViewDataSource {
 
 extension RecipesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        90
+       100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openDetails(for: indexPath.row)
     }
-    
 }
