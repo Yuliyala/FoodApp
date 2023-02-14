@@ -50,10 +50,18 @@ class IconsView: UIView {
         stackView.setCustomSpacing(16, after: veryHealthyImageView)
         stackView.setCustomSpacing(16, after: cheapImageView)
         
+        stackView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(30)
+            $0.leading.equalToSuperview().offset(10)
+            
+            
+        }
         vegetarianImageView.snp.makeConstraints {
-            $0.leading.equalTo(40)
+            $0.leading.equalTo(20)
             $0.size.equalTo(40)
         }
+        
         makeConstraints(imageView: glutenFreeImageView)
         makeConstraints(imageView: dairyFreeImageView)
         makeConstraints(imageView: veryHealthyImageView)
@@ -61,29 +69,20 @@ class IconsView: UIView {
         makeConstraints(imageView: veryPopularFreeImageView)
     }
     
-    
     func makeConstraints(imageView: UIImageView) {
-       
-        stackView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(30)
-            
-        }
         imageView.snp.makeConstraints {
             $0.size.equalTo(40)
         }
     }
-    
-    func setImage(model: RecipeDetail) {
         
-        vegetarianImageView.image = UIImage(named: model.vegetarian ? "vegan" : "meat")
-        glutenFreeImageView.image = UIImage(named: model.vegetarian ? "notgluten" : "gluten")
-        dairyFreeImageView.image = UIImage(named: model.vegetarian ? "dairyfree" : "dairy")
-        veryHealthyImageView.image = UIImage(named: model.vegetarian ? "no-fast-food" : "dairy")
-        veryPopularFreeImageView.image = UIImage(named: model.vegetarian ? "fire" : "no-fire")
-        cheapImageView.image = UIImage(named: model.vegetarian ? "loss" : "arrow")
-     
-    }
-    
+        func setImage(model: RecipeDetail) {
+            
+            vegetarianImageView.image = UIImage(named: model.vegetarian ? "vegan" : "meat")
+            glutenFreeImageView.image = UIImage(named: model.vegetarian ? "notgluten" : "gluten")
+            dairyFreeImageView.image = UIImage(named: model.vegetarian ? "dairyfree" : "dairy")
+            veryHealthyImageView.image = UIImage(named: model.vegetarian ? "no-fast-food" : "fast-food")
+            veryPopularFreeImageView.image = UIImage(named: model.vegetarian ? "fire" : "no-fire")
+            cheapImageView.image = UIImage(named: model.vegetarian ? "loss" : "arrow")
+            
+        }
 }
-

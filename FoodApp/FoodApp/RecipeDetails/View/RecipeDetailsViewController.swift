@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeDetailsViewController: UIViewController {
     
-    var controller: RecipeDetailsController!
+    var controller: RecipeDetailsControllerProtocol!
     
     var rootView: RecipeDetailsView {
         view as! RecipeDetailsView

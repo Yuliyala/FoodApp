@@ -11,32 +11,27 @@ import Alamofire
 
 class RecipesListViewController: UIViewController {
     
-    let controller = RecipesListController()
+    var controller: RecipesListControllerProtocol!
     var dataSource: [RecipePreviewModel] = []
     
-    let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(RecipePreviewTableViewCell.self, forCellReuseIdentifier:RecipePreviewTableViewCell.identifier)
-        return tableView
-    }()
+    var rootView: RecipeListView {
+        view as! RecipeListView
+    }
     
+    override func  loadView() {
+        super.loadView()
+        view = RecipeListView()
+        }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationController?.hidesBottomBarWhenPushed = true
         setupTable()
     }
-    
-    func setupTable() {
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-        tableView.dataSource = self
-        tableView.delegate = self
+
+    func  setupTable() {
+        rootView.tableView.dataSource = self
+            rootView.tableView.delegate = self
         fetchRecipes()
     }
     
@@ -44,7 +39,7 @@ class RecipesListViewController: UIViewController {
         controller.fetchRecipes { recipes in
             print(recipes)
             self.dataSource.append(contentsOf: recipes)
-            self.tableView.reloadData()
+            self.rootView.tableView.reloadData()
         }
     }
     
@@ -56,30 +51,3 @@ class RecipesListViewController: UIViewController {
     }
 }
 
-
-extension RecipesListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RecipePreviewTableViewCell.identifier) as? RecipePreviewTableViewCell else { return UITableViewCell() }
-        
-        cell.set(model: dataSource[indexPath.row])
-        
-        return cell
-    }
-    
-}
-
-extension RecipesListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       100
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        openDetails(for: indexPath.row)
-    }
-}

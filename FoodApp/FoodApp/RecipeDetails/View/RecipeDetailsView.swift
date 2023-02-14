@@ -29,7 +29,6 @@ class RecipeDetailsView: UIView {
         view.axis = .vertical
         view.alignment = .fill
         view.distribution = .fill
-        //        view.spacing = 16
         return view
     }()
     

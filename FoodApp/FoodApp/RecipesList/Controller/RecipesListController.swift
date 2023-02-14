@@ -7,15 +7,24 @@
 
 import Foundation
 
-class RecipesListController {
+protocol RecipesListControllerProtocol: AnyObject {
+    
+    func fetchRecipes(completion: @escaping ([RecipePreviewModel]) -> Void)
+}
 
-    private let apiService = APIService()
+class RecipesListController: RecipesListControllerProtocol {
+
+    private let apiService: APIServiceProtocol
     
     private var currentOffset = 0
     private var limit: Int?
     private var recipes: [RecipePreviewModel] = []
     private var isLoading = false
 
+    init(apiService: APIServiceProtocol = APIService()) {
+        self.apiService = apiService
+    }
+    
     func fetchRecipes(completion: @escaping ([RecipePreviewModel]) -> Void) {
         guard currentOffset < limit ?? 100 && !isLoading else { return }
         isLoading = true

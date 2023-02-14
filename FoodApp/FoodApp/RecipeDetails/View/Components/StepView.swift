@@ -31,7 +31,7 @@ class StepView: UIView {
         label.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
             $0.bottom.equalToSuperview().inset(8)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(30)
         }
         
         layer.cornerRadius = 12
@@ -39,7 +39,7 @@ class StepView: UIView {
     }
     
     func set(step: InstructionStep) {
-        var text = NSMutableAttributedString()
+        let text = NSMutableAttributedString()
         
         text.append(NSMutableAttributedString(
             string: "N \(step.number) \n\n" ,

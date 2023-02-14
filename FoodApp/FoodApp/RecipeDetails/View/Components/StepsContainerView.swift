@@ -43,7 +43,7 @@ class StepsContainerView : UIView {
         
         stackView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(30)
         }
         
     }
@@ -54,11 +54,5 @@ class StepsContainerView : UIView {
             stepView.set(step: element)
             self.stackView.addArrangedSubview(stepView)
         }
-//        for element in steps {
-//            let stepView = StepView()
-//            stepView.set(step: element)
-//            self.stackView.addArrangedSubview(stepView)
-//        }
     }
-    
 }

@@ -8,7 +8,14 @@
 import Foundation
 import Alamofire
 
-class APIService {
+protocol APIServiceProtocol {
+    func fetchRecipes(offset: Int , completion: @escaping (Result<RecipesSearchResult, Error>) -> Void)
+    func fetchRecipe(id: Int,  completion: @escaping (Result<RecipeDetail, Error>) -> Void)
+    func fetchWines(wineType: WineType, completion: @escaping (Result<WineRecommendation, Error>) -> Void)
+    
+}
+
+class APIService: APIServiceProtocol {
     
     let host = "https://api.spoonacular.com/"
 //    let apiKey = "30ff578cb7d54bd8935d52b9d0e7dd15"

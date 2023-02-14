@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
 
-        let recipesController = UINavigationController(rootViewController: RecipesListViewController())
-        let winesController = UINavigationController(rootViewController: WinesViewController())
+        let recipesController = UINavigationController(rootViewController: RecipesListBuilder().build())
+        let winesController = UINavigationController(rootViewController: WinesBuilder().build())
         let tabBar = UITabBarController()
         tabBar.viewControllers = [recipesController, winesController]
         window.rootViewController = tabBar

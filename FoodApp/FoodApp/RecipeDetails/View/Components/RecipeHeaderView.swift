@@ -14,7 +14,7 @@ class RecipeHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 25, weight: .bold)
+        label.font = .systemFont(ofSize: 24, weight: .bold)
         label.numberOfLines = 0
         return label
     }()
@@ -30,7 +30,6 @@ class RecipeHeaderView: UIView {
     init(){
         super.init(frame: .zero)
         setupView()
-    
     }
     
     required init?(coder: NSCoder) {
@@ -42,9 +41,9 @@ class RecipeHeaderView: UIView {
         addSubview(titleLabel)
         
         imageView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(48)
+            $0.leading.trailing.equalToSuperview().inset(60)
             $0.top.equalToSuperview().offset(10)
-            $0.height.equalTo(216)
+            $0.height.equalTo(200)
         }
         
         titleLabel.snp.makeConstraints {

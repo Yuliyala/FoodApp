@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B255795F299C063800875A86 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255795E299C063800875A86 /* RecipeListView.swift */; };
+		B2557961299C083000875A86 /* WinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2557960299C083000875A86 /* WinesView.swift */; };
+		B2557963299C0E9800875A86 /* RecipesListViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2557962299C0E9800875A86 /* RecipesListViewController+Table.swift */; };
 		B295276329819363007BF51B /* StepsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295276229819363007BF51B /* StepsContainerView.swift */; };
 		B2952765298193B5007BF51B /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2952764298193B5007BF51B /* StepView.swift */; };
 		B29527672981A3B7007BF51B /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29527662981A3B7007BF51B /* LinkView.swift */; };
@@ -35,6 +38,8 @@
 		B2D2A5C92992B13500C84C78 /* WineTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */; };
 		B2D2A5CB2992CC4000C84C78 /* WinesViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */; };
 		B2D2A5CD2992CC5D00C84C78 /* WinesViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */; };
+		B2D2A651299BFF7200C84C78 /* RecipesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A650299BFF7200C84C78 /* RecipesListBuilder.swift */; };
+		B2D2A655299C02E000C84C78 /* WinesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2A654299C02E000C84C78 /* WinesBuilder.swift */; };
 		B2E17EF72979CD910088C10A /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E17EF62979CD910088C10A /* IconsView.swift */; };
 		B2E17EFA2979EE530088C10A /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E17EF92979EE530088C10A /* IconImage.swift */; };
 		BFE71EF8894692BA081DBF32 /* Pods_FoodApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C8345094935D6FD250038F /* Pods_FoodApp.framework */; };
@@ -43,6 +48,9 @@
 /* Begin PBXFileReference section */
 		4121EED92F21F9EC08DF20E3 /* Pods-FoodApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C8345094935D6FD250038F /* Pods_FoodApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B255795E299C063800875A86 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		B2557960299C083000875A86 /* WinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinesView.swift; sourceTree = "<group>"; };
+		B2557962299C0E9800875A86 /* RecipesListViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipesListViewController+Table.swift"; sourceTree = "<group>"; };
 		B295276229819363007BF51B /* StepsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsContainerView.swift; sourceTree = "<group>"; };
 		B2952764298193B5007BF51B /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		B29527662981A3B7007BF51B /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,8 @@
 		B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WinesViewController+Table.swift"; sourceTree = "<group>"; };
 		B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WinesViewController+Collection.swift"; sourceTree = "<group>"; };
+		B2D2A650299BFF7200C84C78 /* RecipesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListBuilder.swift; sourceTree = "<group>"; };
+		B2D2A654299C02E000C84C78 /* WinesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinesBuilder.swift; sourceTree = "<group>"; };
 		B2E17EF62979CD910088C10A /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
 		B2E17EF92979EE530088C10A /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		BA69C44D8CA5DD4C09B32228 /* Pods-FoodApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.release.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,14 +108,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B295279429898459007BF51B /* VinesRecommendation */ = {
+		B295279429898459007BF51B /* WinesRecommendation */ = {
 			isa = PBXGroup;
 			children = (
 				B295279529898493007BF51B /* Model */,
 				B295279B29898C3A007BF51B /* Controller */,
 				B29527982989860E007BF51B /* View */,
+				B2D2A654299C02E000C84C78 /* WinesBuilder.swift */,
 			);
-			path = VinesRecommendation;
+			path = WinesRecommendation;
 			sourceTree = "<group>";
 		};
 		B295279529898493007BF51B /* Model */ = {
@@ -124,6 +135,7 @@
 				B2D2A5C82992B13500C84C78 /* WineTypeCollectionViewCell.swift */,
 				B2D2A5CA2992CC4000C84C78 /* WinesViewController+Table.swift */,
 				B2D2A5CC2992CC5D00C84C78 /* WinesViewController+Collection.swift */,
+				B2557960299C083000875A86 /* WinesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,7 +221,7 @@
 		B2ABB8F3296F1D25005E513C /* FoodApp */ = {
 			isa = PBXGroup;
 			children = (
-				B295279429898459007BF51B /* VinesRecommendation */,
+				B295279429898459007BF51B /* WinesRecommendation */,
 				B2AA606D2976FD9200FECF9F /* RecipeDetails */,
 				B2ABB90C296F277A005E513C /* Services */,
 				B2ABB908296F2253005E513C /* RecipesList */,
@@ -228,6 +240,7 @@
 				B2E17F05297C26C60088C10A /* Controller */,
 				B2ABB90F296F3467005E513C /* View */,
 				B2ABB909296F2386005E513C /* Model */,
+				B2D2A650299BFF7200C84C78 /* RecipesListBuilder.swift */,
 			);
 			path = RecipesList;
 			sourceTree = "<group>";
@@ -253,6 +266,8 @@
 			children = (
 				B2ABB8F8296F1D25005E513C /* RecipesListViewController.swift */,
 				B2ABB910296F34A1005E513C /* RecipePreviewTableViewCell.swift */,
+				B255795E299C063800875A86 /* RecipeListView.swift */,
+				B2557962299C0E9800875A86 /* RecipesListViewController+Table.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,18 +416,22 @@
 				B295276329819363007BF51B /* StepsContainerView.swift in Sources */,
 				B295279A29898626007BF51B /* WinesViewController.swift in Sources */,
 				B2ABB90E296F27E1005E513C /* ApiService.swift in Sources */,
+				B2D2A655299C02E000C84C78 /* WinesBuilder.swift in Sources */,
 				B2D2A5CB2992CC4000C84C78 /* WinesViewController+Table.swift in Sources */,
 				B2E17EFA2979EE530088C10A /* IconImage.swift in Sources */,
+				B2557963299C0E9800875A86 /* RecipesListViewController+Table.swift in Sources */,
 				B2AA606F2976FDE000FECF9F /* RecipeDetailsViewController.swift in Sources */,
 				B2ABB8F9296F1D25005E513C /* RecipesListViewController.swift in Sources */,
 				B2ABB913296F3AD3005E513C /* RecipesListController.swift in Sources */,
 				B2E17EF72979CD910088C10A /* IconsView.swift in Sources */,
+				B2557961299C083000875A86 /* WinesView.swift in Sources */,
 				B2AA60752976FE5800FECF9F /* RecipeDetailsController.swift in Sources */,
 				B2D2A5C92992B13500C84C78 /* WineTypeCollectionViewCell.swift in Sources */,
 				B295279F298AA834007BF51B /* WineTableViewCell.swift in Sources */,
 				B2AA607A2977116B00FECF9F /* RecipeDetailsBuilder.swift in Sources */,
 				B2ABB8F5296F1D25005E513C /* AppDelegate.swift in Sources */,
 				B295279129844944007BF51B /* InfoView.swift in Sources */,
+				B255795F299C063800875A86 /* RecipeListView.swift in Sources */,
 				B2ABB911296F34A1005E513C /* RecipePreviewTableViewCell.swift in Sources */,
 				B29527672981A3B7007BF51B /* LinkView.swift in Sources */,
 				B2AA60782976FE9900FECF9F /* RecipeDetailModel.swift in Sources */,
@@ -422,6 +441,7 @@
 				B2AA60712976FDF800FECF9F /* RecipeDetailsView.swift in Sources */,
 				B295278D29841F72007BF51B /* IngredientView.swift in Sources */,
 				B2AA607D2977202500FECF9F /* RecipeHeaderView.swift in Sources */,
+				B2D2A651299BFF7200C84C78 /* RecipesListBuilder.swift in Sources */,
 				B295279D29898C5B007BF51B /* WinesRecommendationController.swift in Sources */,
 				B295279329845BBB007BF51B /* IngredientsContainerView.swift in Sources */,
 				B2952765298193B5007BF51B /* StepView.swift in Sources */,

@@ -7,16 +7,21 @@
 
 import UIKit
 
+protocol RecipeDetailsControllerProtocol: AnyObject {
+    func fetchRecipeInfo(completion: @escaping (Result<RecipeDetail, Error>) -> Void)
+    func openLink()
+}
 
-class  RecipeDetailsController {
+class  RecipeDetailsController: RecipeDetailsControllerProtocol {
     
     let id: Int
-    let apiService = APIService()
+    let apiService: APIServiceProtocol
     
     var details: RecipeDetail?
     
-    init(id: Int) {
+    init(id: Int, apiService: APIServiceProtocol = APIService()) {
         self.id = id
+        self.apiService = apiService
     }
     
     func fetchRecipeInfo(completion: @escaping (Result<RecipeDetail, Error>) -> Void) {

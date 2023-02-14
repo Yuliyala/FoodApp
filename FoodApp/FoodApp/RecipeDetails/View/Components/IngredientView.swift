@@ -20,7 +20,8 @@ class IngredientView: UIView {
     let imageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleToFill
+//        image.backgroundColor = .lightGray
         return image
     }()
 
@@ -46,7 +47,7 @@ class IngredientView: UIView {
         imageView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16)
             $0.leading.equalTo(label.snp.trailing).offset(20)
-            $0.size.equalTo(70)
+            $0.size.equalTo(90)
             $0.centerY.equalToSuperview()
         }
     }
@@ -65,10 +66,6 @@ class IngredientView: UIView {
     
         label.attributedText = text
         
-        
         imageView.kf.setImage(with: URL(string: ingredient.imageLink ?? ""))
     }
-    
-    
-    
 }

@@ -8,11 +8,19 @@
 import Foundation
 
 
-class  WinesRecommendationController {
+protocol  WinesRecommendationControllerProtocol: AnyObject {
+    func fetchWines(wineType: WineType, completion: @escaping (Result<[WineModel], Error>) -> Void)
+}
+
+class  WinesRecommendationController : WinesRecommendationControllerProtocol {
     
-    let apiService = APIService()
+    let apiService: APIServiceProtocol
     private var wines: [WineModel] = []
     private var total: Int?
+    
+    init(apiService: APIServiceProtocol = APIService()){
+        self.apiService = apiService
+    }
     
     func fetchWines(wineType: WineType = .redWine, completion: @escaping (Result<[WineModel], Error>) -> Void) {
         apiService.fetchWines(wineType: wineType) { result in
